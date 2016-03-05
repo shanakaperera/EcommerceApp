@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 24, 2016 12:46:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.certus.dbmodel.Product" table="Product" catalog="shopping_store" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="brand" class="com.certus.dbmodel.Brand" fetch="select">
+            <column name="brand_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="subCategory" class="com.certus.dbmodel.SubCategory" fetch="select">
+            <column name="sub_category_id" not-null="true" />
+        </many-to-one>
+<!--        <many-to-one name="coupon" class="com.certus.dbmodel.Coupon" fetch="select">
+            <column name="coupon_id" />
+        </many-to-one>-->
+        <property name="name" type="string">
+            <column name="name" length="100" not-null="true" />
+        </property>
+        <property name="imageMain" type="string">
+            <column name="image_main" length="65535" />
+        </property>
+        <property name="discountPrice" type="int">
+            <column name="discount_price" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535" />
+        </property>
+        <property name="availability" type="boolean">
+            <column name="availability" not-null="true" />
+        </property>
+        <property name="specs" type="string">
+            <column name="specs" length="65535" />
+        </property>
+        <property name="featuredItems" type="string">
+            <column name="featured_items" length="65535" />
+        </property>
+        <set name="proImgs" table="pro_img" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.ProImg" />
+        </set>
+        <set name="sliderFacts" table="sliderFacts" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.SliderFacts" />
+        </set>
+        <set name="rates" table="Rate" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.Rate" />
+        </set>
+        <set name="wishLists" table="wish_list" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.WishList" />
+        </set>
+        <set name="reviews" table="review" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.Review" />
+        </set>
+        <set name="orders" table="order" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.Order" />
+        </set>
+        <set name="productHasSizes" table="Product_has_size" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.ProductHasSize" />
+        </set>
+    </class>
+</hibernate-mapping>

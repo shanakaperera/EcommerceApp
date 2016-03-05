@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.certus.dbmodel.AdminNotifications" table="admin_notifications">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+        <property name="notified" type="boolean">
+            <column name="notified" not-null="true" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="65535" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

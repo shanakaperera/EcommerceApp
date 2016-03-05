@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shopping_store?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">nbuser</property>
+    <property name="hibernate.show_sql">true</property>
+    <mapping resource="com/certus/dbmodel/Expences.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Currency.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/WishList.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Brand.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Coupon.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Product.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Promotions.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/User.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/SubCategory.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Size.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/ProImg.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Review.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Sales.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Category.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Rate.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Order.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/ProductHasSize.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Administor.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/Messages.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/EmailSettings.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/SliderFacts.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/SiteGeneral.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/TermsConditions.hbm.xml"/>
+    <mapping resource="com/certus/dbmodel/AdminNotifications.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

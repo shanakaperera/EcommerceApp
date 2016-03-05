@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404_page.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500_page.jsp</location>
+    </error-page>
+    <env-entry>
+        <env-entry-name>uploadpathproducts</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>uploads/products/</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>uploadpathbrands</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>uploads/brands/</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>addNewImg</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>img/addImg.png</env-entry-value>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>sliderImgs</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>img/slider/</env-entry-value>
+    </env-entry>
+</web-app>

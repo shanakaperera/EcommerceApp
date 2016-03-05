@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 24, 2016 12:46:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.certus.dbmodel.Order" table="order" catalog="shopping_store" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        
+        <many-to-one name="coupon" class="com.certus.dbmodel.Coupon" fetch="select">
+            <column name="coupon_id" />
+        </many-to-one>
+        <many-to-one name="user" class="com.certus.dbmodel.User" fetch="select">
+            <column name="user_id" />
+        </many-to-one>
+        <property name="dateOrdered" type="date">
+            <column name="date_ordered" length="10" />
+        </property>
+        <property name="orderAddress" type="string">
+            <column name="order_address" length="65535"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45"  />
+        </property>
+        <property name="productIds" type="string">
+            <column name="product_ids" length="65535" />
+        </property>
+        <property name="quantities" type="string">
+            <column name="quantities" length="65535" />
+        </property>
+        <property name="sizes" type="string">
+            <column name="sizes" length="65535" />
+        </property>
+        <property name="grandTot" type="double">
+            <column name="grand_total" precision="22" scale="0" />
+        </property>
+        <property name="payment_method" type="string">
+            <column name="payment_method" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="20"  />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100"  />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="65535" />
+        </property>
+        <property name="invoNum" type="string">
+            <column name="invoice_no" length="45"  not-null="true" />
+        </property>
+        <set name="sales" table="sales" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="order_id" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.Sales" />
+        </set>
+        <set name="messages" table="messages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="order_id" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.Messages" />
+        </set>
+    </class>
+</hibernate-mapping>

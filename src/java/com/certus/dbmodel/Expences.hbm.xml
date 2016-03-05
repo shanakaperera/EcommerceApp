@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 24, 2016 12:46:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.certus.dbmodel.Expences" table="expences" catalog="shopping_store" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="productHasSize" class="com.certus.dbmodel.ProductHasSize" fetch="select">
+            <column name="Product_has_size_id" not-null="true" />
+        </many-to-one>
+        
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+        <property name="qnty" type="int">
+            <column name="qnty" not-null="true" />
+        </property>
+        <property name="total" type="int">
+            <column name="total" not-null="true" />
+        </property>
+        <property name="StockqntyBfUpdate" type="int">
+            <column name="StockqntyBfUpdate" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

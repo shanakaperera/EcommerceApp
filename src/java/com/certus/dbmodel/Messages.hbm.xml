@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.certus.dbmodel.Messages" table="messages" catalog="shopping_store" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="order" class="com.certus.dbmodel.Order" fetch="select">
+            <column name="order_id" not-null="true" />
+        </many-to-one>
+        <property name="message" type="string">
+            <column name="message" length="65535" not-null="true" />
+        </property>
+        <property name="userViewed" type="boolean">
+            <column name="user_viewed"  not-null="true" />
+        </property>
+        <property name="adminViewed" type="boolean">
+            <column name="admin_viewed"  not-null="true" />
+        </property>  
+        <property name="dateSent" type="date">
+            <column name="date_sent" length="10"  not-null="true" />
+        </property> 
+        <property name="adminSent" type="boolean">
+            <column name="admin_sent"  not-null="true" />
+        </property>    
+    </class>
+</hibernate-mapping>

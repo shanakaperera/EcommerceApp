@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 24, 2016 12:46:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.certus.dbmodel.Brand" table="brand" catalog="shopping_store" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="brandName" type="string">
+            <column name="brand_name" length="100" not-null="true" />
+        </property>
+        <property name="img" type="string">
+            <column name="img" length="65535" />
+        </property>
+        <property name="availability" type="boolean">
+            <column name="availability" not-null="true" />
+        </property>
+        <set name="products" table="Product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="brand_id" not-null="true" />
+            </key>
+            <one-to-many class="com.certus.dbmodel.Product" />
+        </set>
+    </class>
+</hibernate-mapping>

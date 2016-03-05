@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="shopping_store"/>
+  <table-filter match-name="size"/>
+  <table-filter match-name="sub_category"/>
+  <table-filter match-name="coupon"/>
+  <table-filter match-name="administor"/>
+  <table-filter match-name="category"/>
+  <table-filter match-name="Product"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="Rate"/>
+  <table-filter match-name="review"/>
+  <table-filter match-name="sales"/>
+  <table-filter match-name="Promotions"/>
+  <table-filter match-name="pro_img"/>
+  <table-filter match-name="expences"/>
+  <table-filter match-name="brand"/>
+  <table-filter match-name="currency"/>
+  <table-filter match-name="order"/>
+  <table-filter match-name="wish_list"/>
+  <table-filter match-name="Product_has_size"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,61 @@
+
+
+.iconImg
+{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.secColor
+{
+    background-color: #cdcdcd;
+    border: 1px solid #C9C1C1;
+}
+
+.quickView
+{
+    margin-bottom: 20px;
+}
+
+.showOrders
+{
+    background-color: #cf5353;
+    border: 1px solid #B01616;
+    padding-bottom: 11px;
+    padding-left: 40px;
+}
+
+.writeWhite
+{
+    color: #ddb8b8;
+}
+
+.badge
+{
+    position: absolute;
+    font-size: 10px;
+    font-weight: normal;
+    right: 4px;
+    top: 10px;
+    line-height: 13px;
+    background-color: #D9534F;
+    border-radius: 2px;
+    padding: 2px 5px;
+}
+
+.proBtn
+{
+    margin-top: 24px;
+}
+
+.littleSpace
+{
+    padding-top: 15px;
+}
+
+.btnUpImg
+{
+    padding-left: 61px;
+    padding-top: 6px;
+}
+

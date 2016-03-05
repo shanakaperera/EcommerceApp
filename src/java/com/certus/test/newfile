@@ -1,0 +1,6 @@
+ProductHasSize phs = (ProductHasSize) s.createCriteria(ProductHasSize.class,"phs")
+                            .createAlias("phs.size", "size")
+                            .createAlias("phs.product", "product")
+                            .add(Restrictions.eq("size.sizeName", request.getParameter("size")))
+                            .add(Restrictions.eq("product.id", Integer.parseInt(request.getParameter("pro_id"))))
+                            .uniqueResult();
